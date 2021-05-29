@@ -1,0 +1,61 @@
+﻿@model  Game
+
+
+<h4>Game</h4>
+<hr />
+<div >
+    <div >
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div >
+                <label asp-for="ReleaseDate" class="control-label"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div >
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsGame" /> @Html.DisplayNameFor(model => model.IsGame)
+                </label>
+            </div>
+            <div >
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="Cost" class="control-label"></label>
+                <input asp-for="Cost" class="form-control" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="PicturePath" class="control-label"></label>
+                <input type="file" name="imageFile" id="imageFile" class="form-control" />
+
+                <span asp-validation-for="PicturePath" class="text-danger"></span>
+            </div>
+            <div >
+                <label asp-for="DeveloperId" class="control-label"></label>
+                <input asp-for="DeveloperId" class ="form-control" asp-items="ViewBag.DeveloperId" />
+                   
+                
+            </div>
+            <div >
+                <label asp-for="PublisherId" class="control-label"></label>
+                <input asp-for="PublisherId" class ="form-control" asp-items="ViewBag.PublisherId"/>
+            </div>
+            <div >
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

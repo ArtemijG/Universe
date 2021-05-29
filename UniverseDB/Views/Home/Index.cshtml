@@ -1,0 +1,70 @@
+﻿@model IEnumerable<UniverseDB.DataBase.Entities.Game>
+@*for (int i = 0; i < ViewBag.game.Count(); i ++)*@@*ViewBag.game.PicturePath*@
+
+
+
+
+
+
+
+
+                                                             @*                        MainPage                    *@
+
+
+
+
+
+
+<div class="row">
+    @if (Model.Count() > 0)
+    {
+        @foreach (var obj in Model)
+        {
+
+            @*@if (obj.Id % 2 != 0)
+            {*@
+
+                <div class="col-6 col-12-narrower">
+
+                    <section class="box special">
+                        <span class="image featured"><img src="~/images/header/@obj.PicturePath" alt="" /></span>
+                        <h3>@obj.Name</h3>
+                        <p>@obj.Description</p>
+                        <p>@obj.Cost</p>
+                        <ul class="actions special">
+                            <li><a class="button alt" asp-area="" asp-controller="" asp-action="">Learn More</a></li>
+                        </ul>
+                    </section>
+
+                </div>
+
+            @*}
+            else
+            {
+                <div class="col-6 col-12-narrower">
+
+                    <section class="box special">
+                        <span class="image featured"><img src="~/images/header/@obj.PicturePath" alt="" /></span>
+                        <h3>@obj.Name</h3>
+                        <p>@obj.Description</p>
+                        <p>@obj.Cost</p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button alt">Learn More</a></li>
+                        </ul>
+                    </section>
+
+                </div>
+            }*@
+
+        }
+    }
+    else
+    {
+        <p>No game exist</p>
+    }
+</div>
+
+
+@*await Html.PartialAsync("SliderPartial")*@
+
+

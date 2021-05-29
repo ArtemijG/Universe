@@ -1,0 +1,83 @@
+﻿
+
+
+
+                                                @*                          AdminMainPage                                          *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@model IQueryable<Game>
+
+    @if (Model.Count() > 0)
+    {
+        <div>
+            <ul class="actions special">
+                <li><a class="button alt" asp-area="Admin" asp-controller="Game" asp-action="Add" asp-route-id="">Добавить программу</a></li>
+            </ul>
+        </div>
+        <div></div>
+        <div></div>
+        <div class="row">
+            
+            @foreach (var obj in Model)
+            {
+            
+                @*@if (obj.Id % 2 != 0)
+                {*@
+
+                    <div class="col-6 col-12-narrower">
+
+                        <section class="box special">
+                            <span class="image featured"><img src="~/images/header/@obj.PicturePath" alt="" /></span>
+                            <h3>@obj.Name</h3>
+                            <p>@obj.Description</p>
+                            <p>@obj.Cost</p>
+                            <ul class="actions special">
+                                <li><a class="button alt" asp-area="Admin" asp-controller="Game" asp-action="Edit" asp-route-id=@obj.Id>Изменить</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+
+                @*}*@
+                @*else
+                {
+                    <div class="col-6 col-12-narrower">
+
+                        <section class="box special">
+                            <span class="image featured"><img src="~/images/header/@obj.PicturePath" alt="" /></span>
+                            <h3>@obj.Name</h3>
+                            <p>@obj.Description</p>
+                            <p>@obj.Cost</p>
+                            <ul class="actions special">
+                                <li><a class="button alt" asp-area="Admin" asp-controller="Game" asp-action="Edit" asp-route-id=@obj.Id>Изменить</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+
+                }*@
+
+            }
+            
+            else
+            {
+            <p>No game exist</p>
+            }
+            
+
+        </div>
+    }
+<form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+    <input type="submit" value="Вsйти">
+</form>
